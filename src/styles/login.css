@@ -1,0 +1,159 @@
+/* --- Layout Utama --- */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Card --- */
+.login-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* --- Animasi Fade In --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.7s ease forwards;
+}
+
+/* --- Logo --- */
+.login-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo {
+  width: 90px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.login-logo:hover {
+  transform: scale(1.05);
+}
+
+/* --- Judul & Subtitle --- */
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.3rem;
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Error --- */
+.login-error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* --- Input --- */
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #334155;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* --- Tombol --- */
+.login-button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.login-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* --- Efek Loading --- */
+.login-button.loading {
+  background-color: #60a5fa;
+  position: relative;
+}
+
+.login-button.loading::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

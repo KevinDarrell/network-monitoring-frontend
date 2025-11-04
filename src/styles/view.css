@@ -1,0 +1,94 @@
+.line-container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.dash {
+  position: relative;
+  width: 16px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #9ca3af; /* abu default */
+  opacity: 0.7;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dash.up {
+  background-color: #22c55e; /* hijau */
+}
+
+.dash.down {
+  background-color: #ef4444; /* merah */
+}
+
+.dash.default {
+  background-color: #9ca3af;
+}
+
+/* 🔥 Dash aktif */
+.dash.live {
+  opacity: 1;
+  transform: scale(1.3);
+  animation: slowPulse 2.5s ease-in-out infinite;
+}
+
+/* 🌊 Efek gelombang sinyal di sekitar dash aktif */
+.dash.live::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.6;
+  background-color: currentColor;
+  animation: signalWave 2.5s ease-out infinite;
+}
+
+/* Pulse lambat */
+@keyframes slowPulse {
+  0% { opacity: 0.7; transform: scale(1.1); }
+  50% { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Gelombang menyebar lembut */
+@keyframes signalWave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.8);
+    opacity: 0;
+  }
+}
+
+.label {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.label.up {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.label.down {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.label.default {
+  background-color: rgba(156, 163, 175, 0.1);
+  color: #6b7280;
+}

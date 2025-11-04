@@ -1,0 +1,50 @@
+/* ==============================
+   ADMIN DASHBOARD LAYOUT STYLES
+   ============================== */
+
+/* Scrollbar yang halus dan modern */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Sidebar dan konten biar transisinya halus */
+.sidebar {
+  transition: all 0.3s ease;
+}
+
+main {
+  transition: all 0.3s ease;
+}
+
+/* Responsive tweak: ketika layar kecil */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    width: 260px;
+    top: 0;
+    bottom: 0;
+    background: white;
+    z-index: 50;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  main {
+    margin-left: 0 !important;
+    padding: 1.5rem;
+  }
+}
