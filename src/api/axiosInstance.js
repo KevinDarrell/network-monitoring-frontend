@@ -1,14 +1,12 @@
 import axios from 'axios';
 
-// Alamat backend Spring Boot
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
-  withCredentials: true // 🔹 wajib untuk session cookie (JSESSIONID)
+
+  withCredentials: true 
 });
 
-// Middleware (interceptor)
 api.interceptors.response.use(
   (response) => response,
   (error) => {
